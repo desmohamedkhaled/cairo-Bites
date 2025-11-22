@@ -10,13 +10,16 @@ function renderCategory(categoryName, containerId, items) {
     items.forEach(item => {
         const card = document.createElement('div');
         card.className = 'menu-card';
-        
+        const itemIndex = allMenuItems.indexOf(item);
+
         card.innerHTML = `
-            <div class="card-image-wrapper">
-                <img src="${item.image}" alt="${item.name}" onerror="this.src='https://via.placeholder.com/300x200?text=${encodeURIComponent(item.name)}'">
-            </div>
+            <a class="view-link" href="item.html?id=${itemIndex}">
+                <div class="card-image-wrapper">
+                    <img src="${item.image}" alt="${item.name}" onerror="this.src='https://via.placeholder.com/300x200?text=${encodeURIComponent(item.name)}'">
+                </div>
+            </a>
             <div class="card-content">
-                <h4>${item.name}</h4>
+                <h4><a class="view-link" href="item.html?id=${itemIndex}">${item.name}</a></h4>
                 <p class="card-description">${item.description}</p>
                 <div class="card-footer">
                     <span class="card-price">${item.price} EGP</span>
