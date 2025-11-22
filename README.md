@@ -241,17 +241,13 @@ class DrinkItem extends MenuItem {
 - `checkout.js`: Cart management and checkout
 - `team.js`: Team page rendering
 
-## 📝 Notes
+Notes
 
 - Cart data persists in browser localStorage
 - All menu items include nutrition information
 - Images should be placed in the `images/` folder
 - Color palette can be customized via CSS variables in `:root`
 
-## 📄 License
+License
 
 © 2025 Cairo Bites. All rights reserved. Made with ❤️ in Egypt.
-
----
-
-**Built with modern web technologies and best practices for a premium user experience.**
