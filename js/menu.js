@@ -37,6 +37,31 @@ function renderCategory(categoryName, containerId, items) {
     });
 }
 
+// Filter menu by category
+function filterMenu(category) {
+    // Update active button
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    event.target.classList.add('active');
+
+    // Hide/show categories
+    const categories = {
+        appetizers: document.querySelector('.appetizers-scroll').parentElement.parentElement,
+        mainDishes: document.querySelector('.main-dishes-scroll').parentElement.parentElement,
+        drinks: document.querySelector('.drinks-scroll').parentElement.parentElement,
+        desserts: document.querySelector('.desserts-scroll').parentElement.parentElement
+    };
+
+    for (const [key, element] of Object.entries(categories)) {
+        if (category === 'all' || category === key) {
+            element.style.display = 'block';
+        } else {
+            element.style.display = 'none';
+        }
+    }
+}
+
 // Render all categories
 function renderAllCategories() {
     renderCategory('appetizers', 'appetizersScroll', menu.appetizers);

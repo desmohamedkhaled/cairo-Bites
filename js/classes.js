@@ -214,7 +214,7 @@ class OrderManager {
         }
     }
 
-    // Toast notification method
+    // Toast notification method with enhanced styling
     showToast(message, type = 'success') {
         const toastContainer = document.querySelector('#toastContainer');
         if (!toastContainer) return;
@@ -222,7 +222,15 @@ class OrderManager {
         const toast = document.createElement('div');
         toast.className = `toast ${type}`;
 
-        const icon = type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle';
+        let icon = 'fa-check-circle';
+        if (type === 'error') {
+            icon = 'fa-exclamation-circle';
+        } else if (type === 'info') {
+            icon = 'fa-info-circle';
+        } else if (type === 'warning') {
+            icon = 'fa-warning';
+        }
+
         toast.innerHTML = `
             <i class="fas ${icon}"></i>
             <span>${message}</span>
@@ -230,46 +238,47 @@ class OrderManager {
 
         toastContainer.appendChild(toast);
 
+        // Auto-remove after 3.5 seconds
         setTimeout(() => {
             toast.remove();
-        }, 3000);
+        }, 3500);
     }
 }
 
 // Menu items array organized by categories
 const menu = {
     appetizers: [
-        new FoodItem("Hummus", 45, "https://images.unsplash.com/photo-1571155329693-1e4d6d8c43e5?w=400&h=300&fit=crop", "Creamy chickpea dip with tahini, lemon, and garlic", "appetizers"),
-        new FoodItem("Baba Ganoush", 50, "https://images.unsplash.com/photo-1623428187969-5da2dcea5ebf?w=400&h=300&fit=crop", "Smoky roasted eggplant dip with tahini", "appetizers"),
-        new FoodItem("Fattoush Salad", 55, "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&h=300&fit=crop", "Fresh mixed salad with crispy pita bread", "appetizers"),
-        new FoodItem("Tabbouleh", 48, "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=400&h=300&fit=crop", "Parsley salad with tomatoes, bulgur, and mint", "appetizers"),
-        new FoodItem("Stuffed Vine Leaves", 60, "https://images.unsplash.com/photo-1485921325833-c519f76c4927?w=400&h=300&fit=crop", "Rice-stuffed grape leaves with herbs", "appetizers")
+        new FoodItem("Hummus", 45, "images/hummus.jpg", "Creamy chickpea dip with tahini, lemon, and garlic", "appetizers"),
+        new FoodItem("Baba Ganoush", 50, "images/Baba ghanoug.jpg", "Smoky roasted eggplant dip with tahini", "appetizers"),
+        new FoodItem("Fattoush Salad", 55, "images/Fattoush salad.jpg", "Fresh mixed salad with crispy pita bread", "appetizers"),
+        new FoodItem("Tabbouleh", 48, "images/Tabbouleh.jpg", "Parsley salad with tomatoes, bulgur, and mint", "appetizers"),
+        new FoodItem("Stuffed Vine Leaves", 60, "images/Stuffed Vine Leaves.jpg", "Rice-stuffed grape leaves with herbs", "appetizers")
     ],
     mainDishes: [
-        new FoodItem("Koshari", 60, "https://images.unsplash.com/photo-1619895862022-091cfb1b6d1f?w=400&h=300&fit=crop", "Egypt's national dish with rice, lentils, and pasta", "mainDishes"),
-        new FoodItem("Shawarma", 120, "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&h=300&fit=crop", "Marinated meat with garlic sauce and pickles", "mainDishes"),
-        new FoodItem("Ful Medames", 45, "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=400&h=300&fit=crop", "Traditional fava beans cooked to perfection", "mainDishes"),
-        new FoodItem("Grilled Kofta", 140, "https://images.unsplash.com/photo-1529042410759-befb1204b468?w=400&h=300&fit=crop", "Spiced ground meat skewers with tahini", "mainDishes"),
-        new FoodItem("Hawawshi", 80, "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&h=300&fit=crop", "Spiced meat baked in crispy bread", "mainDishes"),
-        new FoodItem("Molokhia", 75, "https://images.unsplash.com/photo-1546069901-5d8d92d0e8f5?w=400&h=300&fit=crop", "Traditional jute leaf stew with chicken", "mainDishes"),
-        new FoodItem("Kofta with Rice", 130, "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=400&h=300&fit=crop", "Spiced meatballs with aromatic rice", "mainDishes")
+        new FoodItem("Koshari", 60, "images/Koshari.jpg", "Egypt's national dish with rice, lentils, and pasta", "mainDishes"),
+        new FoodItem("Shawarma", 120, "images/Shawarma.jpg", "Marinated meat with garlic sauce and pickles", "mainDishes"),
+        new FoodItem("Ful Medames", 45, "images/Full medames.jpg", "Traditional fava beans cooked to perfection", "mainDishes"),
+        new FoodItem("Grilled Kofta", 140, "images/Grilled Kofta.jpg", "Spiced ground meat skewers with tahini", "mainDishes"),
+        new FoodItem("Hawawshi", 80, "images/Hawawshi.jpg", "Spiced meat baked in crispy bread", "mainDishes"),
+        new FoodItem("Molokhia", 75, "images/molokhia.jpg", "Traditional jute leaf stew with chicken", "mainDishes"),
+        new FoodItem("Kofta with Rice", 130, "images/Kofta with rice.jpg", "Spiced meatballs with aromatic rice", "mainDishes")
     ],
     drinks: [
-        new DrinkItem("Pepsi", 25, "https://images.unsplash.com/photo-1554866585-cd94860890b7?w=400&h=300&fit=crop", "Refreshing carbonated soft drink", "drinks"),
-        new DrinkItem("Mango Juice", 40, "https://images.unsplash.com/photo-1571575173700-afb9492e6a50?w=400&h=300&fit=crop", "Fresh tropical mango juice", "drinks"),
-        new DrinkItem("Fresh Orange", 35, "https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=400&h=300&fit=crop", "Freshly squeezed orange juice", "drinks"),
-        new DrinkItem("Tea", 20, "https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=400&h=300&fit=crop", "Traditional Egyptian black tea", "drinks"),
-        new DrinkItem("Hibiscus", 30, "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=400&h=300&fit=crop", "Refreshing hibiscus tea (Karkade)", "drinks"),
-        new DrinkItem("Lemon Mint", 32, "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=400&h=300&fit=crop", "Cool lemonade with fresh mint", "drinks"),
-        new DrinkItem("Coffee", 25, "https://images.unsplash.com/photo-1511920170033-f8396924c348?w=400&h=300&fit=crop", "Rich Turkish coffee", "drinks")
+        new DrinkItem("Pepsi", 25, "images/pepsi.jpg", "Refreshing carbonated soft drink", "drinks"),
+        new DrinkItem("Mango Juice", 40, "images/Mango juice.jpg", "Fresh tropical mango juice", "drinks"),
+        new DrinkItem("Fresh Orange", 35, "images/Fresh Orange juice.jpg", "Freshly squeezed orange juice", "drinks"),
+        new DrinkItem("Tea", 20, "images/tea.jpg", "Traditional Egyptian black tea", "drinks"),
+        new DrinkItem("Hibiscus", 30, "images/Hibiscus.jpg", "Refreshing hibiscus tea (Karkade)", "drinks"),
+        new DrinkItem("Lemon Mint", 32, "images/Lemon ment.jpg", "Cool lemonade with fresh mint", "drinks"),
+        new DrinkItem("Coffee", 25, "images/coffee.jpg", "Rich Turkish coffee", "drinks")
     ],
     desserts: [
-        new FoodItem("Baklava", 65, "https://images.unsplash.com/photo-1567921464020-f85aea2619c0?w=400&h=300&fit=crop", "Layers of phyllo with nuts and honey", "desserts"),
-        new FoodItem("Basbousa", 50, "https://images.unsplash.com/photo-1571115764595-644a1f56a55c?w=400&h=300&fit=crop", "Sweet semolina cake with syrup", "desserts"),
-        new FoodItem("Umm Ali", 55, "https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=400&h=300&fit=crop", "Traditional bread pudding with nuts", "desserts"),
-        new FoodItem("Kunafa", 70, "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=400&h=300&fit=crop", "Sweet cheese pastry with syrup", "desserts"),
-        new FoodItem("Mahalabia", 40, "https://images.unsplash.com/photo-1558636508-e0db3814bd1d?w=400&h=300&fit=crop", "Creamy milk pudding with rose water", "desserts"),
-        new FoodItem("Zalabia", 45, "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=300&fit=crop", "Crispy fried dough with honey", "desserts")
+        new FoodItem("Baklava", 65, "images/baklava.jpg", "Layers of phyllo with nuts and honey", "desserts"),
+        new FoodItem("Basbousa", 50, "images/basbousa.jpg", "Sweet semolina cake with syrup", "desserts"),
+        new FoodItem("Umm Ali", 55, "images/Um ali.jpg", "Traditional bread pudding with nuts", "desserts"),
+        new FoodItem("Kunafa", 70, "images/kunafa.jpg", "Sweet cheese pastry with syrup", "desserts"),
+        new FoodItem("Mahalabia", 40, "images/mahalabia.jpg", "Creamy milk pudding with rose water", "desserts"),
+        new FoodItem("Zalabia", 45, "images/zalabia.jpg", "Crispy fried dough with honey", "desserts")
     ]
 };
 
