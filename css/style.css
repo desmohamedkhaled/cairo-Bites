@@ -5,21 +5,21 @@
 }
 
 :root {
-    --primary-color: #c41e3a;
-    --primary-dark: #a01a2e;
-    --secondary-color: #2d5016;
-    --secondary-dark: #1f350f;
-    --accent-color: #d4af37;
-    --text-dark: #1a1a1a;
-    --text-light: #666;
-    --text-muted: #999;
-    --bg-light: #f8f8f8;
-    --bg-white: #ffffff;
-    --bg-off-white: #fafafa;
-    --border-color: #e8e8e8;
-    --shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-    --shadow-hover: 0 6px 24px rgba(0, 0, 0, 0.12);
-    --shadow-soft: 0 1px 3px rgba(0, 0, 0, 0.05);
+    --primary-color: #72383D;
+    --primary-dark: #5a2c30;
+    --secondary-color: #322D29;
+    --secondary-dark: #1f1c19;
+    --accent-color: #AC9C8D;
+    --text-dark: #322D29;
+    --text-light: #72383D;
+    --text-muted: #AC9C8D;
+    --bg-light: #D1C7BD;
+    --bg-white: #EFE9E1;
+    --bg-off-white: #EFE9E1;
+    --border-color: #D1C7BD;
+    --shadow: 0 2px 12px rgba(50, 45, 41, 0.12);
+    --shadow-hover: 0 6px 24px rgba(50, 45, 41, 0.18);
+    --shadow-soft: 0 1px 3px rgba(50, 45, 41, 0.08);
     --border-radius: 12px;
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -811,7 +811,7 @@ body {
 }
 
 .remove-btn {
-    background: #dc3545;
+    background: var(--primary-color);
     color: white;
     border: none;
     border-radius: 50%;
@@ -827,7 +827,7 @@ body {
 }
 
 .remove-btn:hover {
-    background: #c82333;
+    background: var(--primary-dark);
     transform: scale(1.05) rotate(90deg);
     box-shadow: var(--shadow);
 }
@@ -1254,7 +1254,7 @@ body {
 
 /* Footer */
 .footer {
-    background: #1a1a1a;
+    background: var(--secondary-color);
     color: white;
     padding: 4rem 0 2rem;
     margin-top: 5rem;
