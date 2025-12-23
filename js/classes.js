@@ -252,7 +252,7 @@ class OrderManager {
 // Menu items array organized by categories, with nutrition facts
 const menu = {
     appetizers: [
-        new FoodItem("Hummus", 45, "images/hummus.jpg", "Creamy chickpea dip with tahini, lemon, and garlic", "appetizers", {calories:200,fat:10,carbs:18,protein:6,sugar:2,sodium:300}),
+        new FoodItem("Hummus", 45, "images/Hummus.jpg", "Creamy chickpea dip with tahini, lemon, and garlic", "appetizers", {calories:200,fat:10,carbs:18,protein:6,sugar:2,sodium:300}),
         new FoodItem("Baba Ganoush", 50, "images/Baba ghanoug.jpg", "Smoky roasted eggplant dip with tahini", "appetizers", {calories:180,fat:12,carbs:10,protein:3,sugar:2,sodium:220}),
         new FoodItem("Fattoush Salad", 55, "images/Fattoush salad.jpg", "Fresh mixed salad with crispy pita bread", "appetizers", {calories:120,fat:6,carbs:10,protein:2,sugar:3,sodium:150}),
         new FoodItem("Tabbouleh", 48, "images/Tabbouleh.jpg", "Parsley salad with tomatoes, bulgur, and mint", "appetizers", {calories:160,fat:7,carbs:20,protein:4,sugar:2,sodium:120}),
@@ -264,25 +264,25 @@ const menu = {
         new FoodItem("Ful Medames", 45, "images/Full medames.jpg", "Traditional fava beans cooked to perfection", "mainDishes", {calories:360,fat:8,carbs:40,protein:18,sugar:4,sodium:400}),
         new FoodItem("Grilled Kofta", 140, "images/Grilled Kofta.jpg", "Spiced ground meat skewers with tahini", "mainDishes", {calories:580,fat:40,carbs:10,protein:35,sugar:2,sodium:700}),
         new FoodItem("Hawawshi", 80, "images/Hawawshi.jpg", "Spiced meat baked in crispy bread", "mainDishes", {calories:550,fat:28,carbs:45,protein:25,sugar:3,sodium:650}),
-        new FoodItem("Molokhia", 75, "images/molokhia.jpg", "Traditional jute leaf stew with chicken", "mainDishes", {calories:330,fat:10,carbs:8,protein:30,sugar:1,sodium:520}),
+        new FoodItem("Molokhia", 75, "images/Molokhia.jpg", "Traditional jute leaf stew with chicken", "mainDishes", {calories:330,fat:10,carbs:8,protein:30,sugar:1,sodium:520}),
         new FoodItem("Kofta with Rice", 130, "images/Kofta with rice.jpg", "Spiced meatballs with aromatic rice", "mainDishes", {calories:620,fat:30,carbs:60,protein:32,sugar:2,sodium:700})
     ],
     drinks: [
-        new DrinkItem("Pepsi", 25, "images/pepsi.jpg", "Refreshing carbonated soft drink", "drinks", {calories:150,fat:0,carbs:39,protein:0,sugar:39,sodium:30}),
+        new DrinkItem("Pepsi", 25, "images/Pepsi.jpg", "Refreshing carbonated soft drink", "drinks", {calories:150,fat:0,carbs:39,protein:0,sugar:39,sodium:30}),
         new DrinkItem("Mango Juice", 40, "images/Mango juice.jpg", "Fresh tropical mango juice", "drinks", {calories:180,fat:0.5,carbs:42,protein:1,sugar:40,sodium:10}),
         new DrinkItem("Fresh Orange", 35, "images/Fresh Orange juice.jpg", "Freshly squeezed orange juice", "drinks", {calories:120,fat:0,carbs:28,protein:2,sugar:24,sodium:0}),
         new DrinkItem("Tea", 20, "images/tea.jpg", "Traditional Egyptian black tea", "drinks", {calories:5,fat:0,carbs:0,protein:0,sugar:0,sodium:5}),
         new DrinkItem("Hibiscus", 30, "images/Hibiscus.jpg", "Refreshing hibiscus tea (Karkade)", "drinks", {calories:10,fat:0,carbs:2,protein:0,sugar:1,sodium:5}),
         new DrinkItem("Lemon Mint", 32, "images/Lemon ment.jpg", "Cool lemonade with fresh mint", "drinks", {calories:80,fat:0,carbs:20,protein:0,sugar:18,sodium:10}),
-        new DrinkItem("Coffee", 25, "images/coffee.jpg", "Rich Turkish coffee", "drinks", {calories:5,fat:0,carbs:1,protein:0,sugar:0,sodium:5})
+        new DrinkItem("Coffee", 25, "images/Coffee.jpg", "Rich Turkish coffee", "drinks", {calories:5,fat:0,carbs:1,protein:0,sugar:0,sodium:5})
     ],
     desserts: [
-        new FoodItem("Baklava", 65, "images/baklava.jpg", "Layers of phyllo with nuts and honey", "desserts", {calories:420,fat:24,carbs:50,protein:6,sugar:35,sodium:200}),
-        new FoodItem("Basbousa", 50, "images/basbousa.jpg", "Sweet semolina cake with syrup", "desserts", {calories:360,fat:15,carbs:50,protein:5,sugar:30,sodium:180}),
+        new FoodItem("Baklava", 65, "images/Baklava.jpg", "Layers of phyllo with nuts and honey", "desserts", {calories:420,fat:24,carbs:50,protein:6,sugar:35,sodium:200}),
+        new FoodItem("Basbousa", 50, "images/Basbousa.jpg", "Sweet semolina cake with syrup", "desserts", {calories:360,fat:15,carbs:50,protein:5,sugar:30,sodium:180}),
         new FoodItem("Umm Ali", 55, "images/Um ali.jpg", "Traditional bread pudding with nuts", "desserts", {calories:300,fat:12,carbs:40,protein:8,sugar:20,sodium:140}),
-        new FoodItem("Kunafa", 70, "images/kunafa.jpg", "Sweet cheese pastry with syrup", "desserts", {calories:450,fat:26,carbs:48,protein:8,sugar:32,sodium:220}),
-        new FoodItem("Mahalabia", 40, "images/mahalabia.jpg", "Creamy milk pudding with rose water", "desserts", {calories:200,fat:6,carbs:30,protein:6,sugar:20,sodium:80}),
-        new FoodItem("Zalabia", 45, "images/zalabia.jpg", "Crispy fried dough with honey", "desserts", {calories:330,fat:14,carbs:50,protein:3,sugar:28,sodium:160})
+        new FoodItem("Kunafa", 70, "images/Kunafa.jpg", "Sweet cheese pastry with syrup", "desserts", {calories:450,fat:26,carbs:48,protein:8,sugar:32,sodium:220}),
+        new FoodItem("Mahalabia", 40, "images/Mahalabia.jpg", "Creamy milk pudding with rose water", "desserts", {calories:200,fat:6,carbs:30,protein:6,sugar:20,sodium:80}),
+        new FoodItem("Zalabia", 45, "images/Zalabia.jpg", "Crispy fried dough with honey", "desserts", {calories:330,fat:14,carbs:50,protein:3,sugar:28,sodium:160})
     ]
 };
 
